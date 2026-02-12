@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neuraltoolkit"
+version = "0.2.0"
+description = "A machine learning library."
+readme = "README.md"
+authors = [{ name="Chike Ikefuama"}]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=2.3.1",
+    "matplotlib>=3.10.3",
+    "scipy>=1.16.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

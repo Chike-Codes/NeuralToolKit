@@ -1,0 +1,2 @@
+from .mean_squared_error import MeanSquaredError
+from .categorical_cross_entropy import CategoricalCrossEntropy

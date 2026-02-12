@@ -1,0 +1,8 @@
+__pycache__
+.venv
+archive
+main.py
+mnistloader.py
+model_struct
+tempCodeRunnerFile.py
+test.py
