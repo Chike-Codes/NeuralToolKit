@@ -63,19 +63,6 @@ class Model:
             else:
                 weight_gradient, bias_gradient = self.layers[i].calc_gradients(error=backprop_error, input=input)
                 self.layers[i].optimize_parameters(weight_gradient, bias_gradient)
-
-    def backprop_loss(self, loss_derivative:list, activations:list[list[float]], activation_derivatives:list[list[float]], input_data:list):
-        """Propagates error using error directly instead of xs and ys. """
-        backprop_error = loss_derivative
-        for i in reversed(range(self.layer_count)):
-            input = input_data[0] if i == 0 else activations[i - 1]
-            if i != self.layer_count - 1:
-                backprop_error = self.layers[i + 1].back(error=backprop_error, derivatives=activation_derivatives[i])
-                weight_gradient, bias_gradient = self.layers[i].calc_gradients(error=backprop_error, input=input)
-                self.layers[i].optimize_parameters(weight_gradient, bias_gradient)
-            else:
-                weight_gradient, bias_gradient = self.layers[i].calc_gradients(error=backprop_error, input=input)
-                self.layers[i].optimize_parameters(weight_gradient, bias_gradient)
             
     def predict(self, input:list[list], aux_input=None):
         outputs = self.feed_forward(input, aux_input)[0]
