@@ -32,10 +32,12 @@ NumPy-backed tensor abstraction
 Designed for extensibility
 
 # Installation
-```python -m pip install -e neuraltoolkit```
+```powershell
+python -m pip install -e neuraltoolkit
+```
 
 # XOR Example
-```
+```python
 import neuraltoolkit as ntk
 import numpy as np
 
